@@ -24,3 +24,8 @@ def edit_task(request, task_id):
         form = TaskForm(instance = task)
     tasks = Task.objects.all()
     return render(request, 'edit_task.html', {'form': form, 'task': task})
+
+def delete_task(request, task_id):
+    task = get_object_or_404(Task, id = task_id)
+    task.delete()
+    return redirect('task_list')
