@@ -2,16 +2,18 @@
 <html>
 <head>
     <title>To Do List</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'todo/task_list_styles.css' %}"> {% endcomment %}
 </head>
-<body>
-    <h1>My To Do List</h1>
-    <form method="POST">
+
+<body class = "container">
+    <h1 class = "header">My To Do List</h1>
+    <form class = "form" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Add Task</button>
     </form>
 
-    <ul>
+    <ul class = "list">
         {% for task in tasks %}
         <li>
             {{ task.title }} - {% if task.completed %} Done {% else %} Pending {% endif %}
