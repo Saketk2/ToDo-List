@@ -1,0 +1,65 @@
+/* Container styles */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.form {
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+/* List styling */
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list li a {
+    color: #007BFF;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.list li a:hover {
+    text-decoration: underline;
+}
+
+/* Optional: style for the completed tasks */
+.list li.completed {
+    text-decoration: line-through;
+    color: #888;
+}

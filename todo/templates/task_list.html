@@ -2,21 +2,23 @@
 <html>
 <head>
     <title>To Do List</title>
-    {% comment %} <link rel="stylesheet" href="{% static 'todo/task_list_styles.css' %}"> {% endcomment %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo/task_list_styles.css' %}">
 </head>
 
-<body class = "container">
-    <h1 class = "header">My To Do List</h1>
-    <form class = "form" method="POST">
+<body class="container">
+    <h1 class="header">My To Do List</h1>
+    
+    <form class="form" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Add Task</button>
+        <button class="button" type="submit">Add Task</button>
     </form>
 
-    <ul class = "list">
+    <ul class="list">
         {% for task in tasks %}
-        <li>
-            {{ task.title }} - {% if task.completed %} Done {% else %} Pending {% endif %}
+        <li class="{% if task.completed %}completed{% endif %}">
+            {{ task.title }}
             <a href="{% url 'edit_task' task.id %}">Edit</a> |
             <a href="{% url 'delete_task' task.id %}">Delete</a>
         </li>
